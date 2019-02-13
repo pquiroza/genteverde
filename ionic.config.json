@@ -1,6 +1,8 @@
 {
   "name": "gente",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "6006839d"
 }

@@ -1,12 +1,57 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+
+<ion-content padding class="masters">
+<ion-img [src]="'/assets/logoGenteVerde.png'" padding-vertical>
+
+  </ion-img >
+
+<p  >Cadas pequeño acto cuenta</p>
+
+
+
+  <ion-grid >
+    <ion-row justify-content-center align-items-center >
+
+          <h2>No tienes una cuenta</h2>
+
+    <ion-button (click)="main()">Registrarse Aquí
+      </ion-button>
+
+      </ion-row>
+<ion-row>
+  <h2>o puedes iniciar sesión con</h2>
+  </ion-row>
+<ion-row>
+  <ion-col>
+    <ion-fab>
+  <ion-fab-button (click)="main()">
+    <ion-icon name="logo-facebook" color="white"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+    </ion-col>
+    <ion-col>
+      <ion-fab>
+    <ion-fab-button  (click)="main()">
+  <ion-icon name="logo-twitter"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+      </ion-col>
+      <ion-col>
+        <ion-fab>
+      <ion-fab-button (click)="main()">
+  <ion-icon name="logo-google"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+        </ion-col>
+  </ion-row>
+
+
+
+
+
+  </ion-grid>
+
+
+
+
 </ion-content>

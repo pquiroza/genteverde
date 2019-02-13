@@ -1,0 +1,64 @@
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="true"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <p text-center>
+      <img [src]="'https://firebasestorage.googleapis.com/v0/b/fresh-2637d.appspot.com/o/verd.jpeg?alt=media&token=c890d4f9-c19b-454a-ba1d-315cf8e45e74'" style="width:80px;height:80px;border-radius:50%">
+
+  </p>
+  <p text-center>
+    Carlos Verde <br>
+   <span style="color:grey"> Actress <br>
+    Film Industry</span>
+  </p>
+  <ion-row text-center>
+    <ion-col>
+        <button ion-button icon-left outline color="cuspurple">
+            <ion-icon style="margin-top:-4px" name="home"></ion-icon>
+           Tinder Plus
+          </button>
+    </ion-col>
+    <ion-col>
+        <button ion-button icon-left outline color="cuspurple">
+            <ion-icon style="margin-top:-4px" name="md-cog"></ion-icon>
+           Settings
+          </button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <p text-center>
+        <ion-button color="primary" slot="start" >
+<ion-icon name="images"></ion-icon>
+</ion-button>
+      </p>
+    </ion-col>
+    <ion-col>
+      <p text-center>
+        <ion-button color="primary" slot="start" >
+<ion-icon name="videocam"></ion-icon>
+</ion-button>
+      </p>
+    </ion-col>
+    <ion-col>
+        <p text-center>
+          <ion-button color="primary" slot="start" >
+<ion-icon name="pin"></ion-icon>
+</ion-button>
+        </p>
+    </ion-col>
+  </ion-row>
+  <h4 text-center>Share with Friends</h4>
+  <h5 text-center>Find match</h5>
+  <p text-center>
+  <button ion-button full (click)="presentModal()" style="border-radius:40px; background: linear-gradient(to right, #3A1C71 , #D76D77, #FFAF7B);
+  ">Share</button>
+  </p>
+</ion-content>

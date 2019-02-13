@@ -1,3 +1,30 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <ion-menu contentId="content1" side="start" type="push">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Gente Verde</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+<ion-content>
+  <ion-list>
+    <ion-menu-toggle   >
+      <ion-item (click)="home()"><ion-icon name="home" item-start></ion-icon>Home</ion-item>
+      <ion-item (click)="mapa()"><ion-icon name="globe" item-start></ion-icon>Puntos Verdes</ion-item>
+      <ion-item (click)="gente()"><ion-icon name="contacts" item-start></ion-icon>Gente Verde</ion-item>
+
+      <ion-item (click)="perfil()"><ion-icon name="contact" item-start></ion-icon>Perfil</ion-item>
+      <ion-item (click)="arbol()"><ion-icon name="paper" item-start></ion-icon>Arbol</ion-item>
+
+      <ion-item (click)="logout()"><ion-icon name="power" item-start></ion-icon>Logout</ion-item>
+
+
+    </ion-menu-toggle>
+
+
+  </ion-list>
+</ion-content>    </ion-content>
+</ion-menu>
+  <ion-router-outlet id=content1></ion-router-outlet>
 </ion-app>
