@@ -9,8 +9,10 @@ import {
   GoogleMap,
   GoogleMapsEvent,
   Marker,
+  ILatLng,
   GoogleMapsAnimation,
-  MyLocation
+  MyLocation,
+  BaseArrayClass
 } from '@ionic-native/google-maps';
 
 
@@ -25,14 +27,12 @@ import {
 export class MapaPage implements OnInit {
   map: GoogleMap;
  loading: any;
-  lat: number
-    lng: number
+
   constructor( public loadingCtrl: LoadingController,
     public toastCtrl: ToastController,
     private platform: Platform) {
 
-    this.lat = 51.678418;
-  this.lng = 7.809007;
+
   }
 
   async ngOnInit() {
@@ -43,8 +43,46 @@ export class MapaPage implements OnInit {
   }
 
 
-  loadMap() {
+  async loadMap() {
+
+    let POINTS: BaseArrayClass<any> = new BaseArrayClass<any>([
+      {
+        position: {lat:-33.412928,lng:-70.582746},
+        title: "Confecciones Naturaleza Viva",
+        iconData: "./assets/icons/vestipng.png"
+      },
+      {
+        position: {lat:-33.415427,lng:-70.582413},
+        title: "Punto de Reciclaje Cruz del Sur 200",
+        iconData: "./assets/icons/residuosicon.png"
+      },
+      {
+        position: {lat:-33.411513,lng:-70.577071},
+        title: "Punto de Reciclaje Nueva Apoquindo",
+        iconData: "./assets/icons/residuosicon.png"
+      },
+      {
+        position: {lat:-33.413725,lng:-70.585385},
+        title: "Restoran Veggie",
+        iconData: "./assets/icons/alimentacionicon.png"
+      },
+      {
+        position: {lat:-33.415275,lng:-70.581598},
+        title: "Cafe Ecologico",
+        iconData: "./assets/icons/alimentacionicon.png"
+      }
+
+
+    ]);
+
+    let bounds: ILatLng[] = POINTS.map((data: any, idx: number) => {
+   console.log(data);
+   return data.position;
+ });
+
+
   this.map = GoogleMaps.create('map_canvas', {
+    setMyLocationEnabled:true,
     camera: {
       target: {
         lat: 43.0741704,
@@ -55,9 +93,51 @@ export class MapaPage implements OnInit {
     }
   });
 
+  this.loading = await this.loadingCtrl.create({
+    message: 'Please wait...'
+  });
+  await this.loading.present();
+  this.map.getMyLocation().then((location: MyLocation) => {
+    console.log(location)
+    this.loading.dismiss();
+    console.log(JSON.stringify(location, null ,2));
+
+    // Move the map camera to the location with animation
+    this.map.animateCamera({
+      target: location.latLng,
+      zoom: 17,
+      tilt: 30
+    });
+
+    // add a marker
+
+
+
+  })
+  .catch(err => {
+    this.loading.dismiss();
+    this.showToast(err.error_message);
+  });
+
+  POINTS.forEach((data: any) => {
+    data.disableAutoPan = true;
+    let marker: Marker = this.map.addMarkerSync(data);
+    let iconData: any = marker.get('iconData');
+    marker.setIcon(iconData);
+    marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(this.onMarkerClick);
+    marker.on(GoogleMapsEvent.INFO_CLICK).subscribe(this.onMarkerClick);
+  });
+
+
+
+
 }
 
-
+onMarkerClick(params: any) {
+  let marker: Marker = <Marker>params[1];
+  let iconData: any = marker.get('iconData');
+  marker.setIcon(iconData);
+}
 async onButtonClick() {
   this.map.clear();
 
@@ -68,6 +148,7 @@ async onButtonClick() {
 
   // Get the location of you
   this.map.getMyLocation().then((location: MyLocation) => {
+    console.log(location)
     this.loading.dismiss();
     console.log(JSON.stringify(location, null ,2));
 
