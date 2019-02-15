@@ -83,6 +83,7 @@ export class MapaPage implements OnInit {
 
   this.map = GoogleMaps.create('map_canvas', {
     setMyLocationEnabled:true,
+  stylers: [  { "visibility": "simplify" }],
     camera: {
       target: {
         lat: 43.0741704,
@@ -106,18 +107,28 @@ export class MapaPage implements OnInit {
     this.map.animateCamera({
       target: location.latLng,
       zoom: 17,
-      tilt: 30
+      tilt: 30,
     });
 
     // add a marker
+    let mymarker: Marker = this.map.addMarkerSync({
+      title: "Mi posición",
+      position: location.latLng,
+      animation: GoogleMapsAnimation.BOUNCE,
+      iconData: "./assets/icons/treeicon.png"
 
-
+    })
+    let iconDaata: any = mymarker.get('iconData')
+    mymarker.setIcon(iconDaata)
+    this.loading.dismiss();
 
   })
   .catch(err => {
     this.loading.dismiss();
     this.showToast(err.error_message);
   });
+
+
 
   POINTS.forEach((data: any) => {
     data.disableAutoPan = true;

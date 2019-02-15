@@ -87,4 +87,5 @@
         <variable name="API_KEY_FOR_IOS" value="AIzaSyAvPJ20d2ok4mJhQnos4joaFTPEacDxrqg" />
     </plugin>
     <engine name="browser" spec="5.0.4" />
+    <engine name="ios" spec="~4.5.5" />
 </widget>

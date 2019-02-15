@@ -7,9 +7,46 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<div  style="height: 300px" id="map_canvas"></div>
 
 <ion-content padding>
-  <ion-button ion-button (click)="onButtonClick()">Demo</ion-button>
+  <div  style="height: 300px" id="map_canvas"></div>
 
+
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Alimentación</ion-label>
+      <ion-toggle [(ngModel)]="alimentacion"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Construcción</ion-label>
+      <ion-toggle [(ngModel)]="construccion"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Educación</ion-label>
+      <ion-toggle [(ngModel)]="educacion"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Energías Limpoas</ion-label>
+      <ion-toggle [(ngModel)]="energias"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Gestión de Residuos</ion-label>
+      <ion-toggle [(ngModel)]="residuos"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Transportes</ion-label>
+      <ion-toggle [(ngModel)]="transporte"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Turismo</ion-label>
+      <ion-toggle [(ngModel)]="turismo"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Vestimenta</ion-label>
+      <ion-toggle [(ngModel)]="vestimenta"></ion-toggle>
+    </ion-item>
+  </ion-list>
 </ion-content>
