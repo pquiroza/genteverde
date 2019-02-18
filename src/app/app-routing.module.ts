@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'perfil', loadChildren: './perfil/perfil.module#PerfilPageModule' },
   { path: 'mapa', loadChildren: './mapa/mapa.module#MapaPageModule' },
   { path: 'gente', loadChildren: './gente/gente.module#GentePageModule' },
+  { path: 'news', loadChildren: './news/news.module#NewsPageModule' },
 ];
 
 @NgModule({

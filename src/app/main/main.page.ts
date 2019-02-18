@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { NewsPage } from '../news/news.page';
 
 @Component({
   selector: 'app-main',
@@ -6,11 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.page.scss'],
 })
 export class MainPage implements OnInit {
-  lat: number = 51.678418;
-    lng: number = 7.809007;
-  constructor() { }
+
+  constructor(public modalController: ModalController) { }
 
   ngOnInit() {
   }
 
+  detalleCard(){
+    console.log("en detallecard")
+    this.presentModal();
+  }
+
+
+async presentModal(){
+  const modal = await this.modalController.create({
+    component: NewsPage
+
+  });
+  return await modal.present()
+}
 }

@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AgmCoreModule } from '@agm/core';
 
+import { NewsPageModule } from './news/news.module';
+
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import { AgmCoreModule } from '@agm/core';
     CommonModule,
     FormsModule,
     AppRoutingModule,
+    NewsPageModule,
     AgmCoreModule.forRoot({
   apiKey: 'AIzaSyAE82Y2RXh5bk0Ax0Kwny6d9IbvYZnF1EI'
 })

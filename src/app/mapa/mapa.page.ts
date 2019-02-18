@@ -49,27 +49,27 @@ export class MapaPage implements OnInit {
       {
         position: {lat:-33.412928,lng:-70.582746},
         title: "Confecciones Naturaleza Viva",
-        iconData: "./assets/icons/vestipng.png"
+        iconData: "www/assets/icons/vestipng.png"
       },
       {
         position: {lat:-33.415427,lng:-70.582413},
         title: "Punto de Reciclaje Cruz del Sur 200",
-        iconData: "./assets/icons/residuosicon.png"
+        iconData: "www/assets/icons/residuosicon.png"
       },
       {
         position: {lat:-33.411513,lng:-70.577071},
         title: "Punto de Reciclaje Nueva Apoquindo",
-        iconData: "./assets/icons/residuosicon.png"
+        iconData: "www/assets/icons/residuosicon.png"
       },
       {
         position: {lat:-33.413725,lng:-70.585385},
         title: "Restoran Veggie",
-        iconData: "./assets/icons/alimentacionicon.png"
+        iconData: "www/assets/icons/alimentacionicon.png"
       },
       {
         position: {lat:-33.415275,lng:-70.581598},
         title: "Cafe Ecologico",
-        iconData: "./assets/icons/alimentacionicon.png"
+        iconData: "www/assets/icons/alimentacionicon.png"
       }
 
 
@@ -115,7 +115,7 @@ export class MapaPage implements OnInit {
       title: "Mi posición",
       position: location.latLng,
       animation: GoogleMapsAnimation.BOUNCE,
-      iconData: "./assets/icons/treeicon.png"
+      iconData: "www/assets/icons/treeicon.png"
 
     })
     let iconDaata: any = mymarker.get('iconData')
