@@ -14,15 +14,17 @@ export class MainPage implements OnInit {
   ngOnInit() {
   }
 
-  detalleCard(){
+  detalleCard(id){
     console.log("en detallecard")
-    this.presentModal();
+    this.presentModal(id);
   }
 
 
-async presentModal(){
+async presentModal(id){
+  console.log(id)
   const modal = await this.modalController.create({
-    component: NewsPage
+    component: NewsPage,
+    componentProps: { idNew: id}
 
   });
   return await modal.present()

@@ -4,6 +4,7 @@
 
 
 <ion-content padding>
+  <div *ngIf="new==='n1'">
   <ion-card>
     <ion-card-header>
     <ion-card-subtitle>Nuevo Restorant Vegano</ion-card-subtitle>
@@ -37,4 +38,43 @@
   </ion-item>
   </ion-card-content>
     </ion-card>
+  </div>
+
+
+
+  <div *ngIf="new === 'n2'">
+  <ion-card>
+    <ion-card-header>
+    <ion-card-subtitle>Nuevo Punto de Reciclaje</ion-card-subtitle>
+    <ion-card-title>Veggie</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+            <ion-img [src]="'https://firebasestorage.googleapis.com/v0/b/fresh-2637d.appspot.com/o/gente%2Frestoranvegano.jpeg?alt=media&token=e19ead20-8749-48d4-9052-4b7cc5128366'"></ion-img>
+  <ion-label>Nuevo Restoran Vegano en Santiago, ven a conocerlo!!</ion-label>
+
+
+
+  <p>Ven a conocer el nuevo restoran Vegano en Santiago. <br>
+    Inaugurado en enero de este año, el restoran Veggie está acaparando las miradas de los fanáticos en comida sana.<br>
+    Con una novedosa propuesta de platos y bebidas, a un precio moderado, está recibiendo excelentes críticas de los entendidos y entusiastas en comida Vegana.
+  </p>
+
+<p>
+  Ven a conocernos, nos encontramos en Avenida Providencia 3345.  Nuestros horarios son de Lunes a Viernes de 12:00 a 21:00 horas, Sábados de 12:00 a 00:00 y los Domingos de 12:00 a 16:00.
+</p>
+  <ion-item lines="none">
+            <ion-chip color="primary" slot="start" >
+    <ion-icon name="logo-twitter" ></ion-icon>
+  </ion-chip>
+  <ion-chip color="primary" slot="start" >
+  <ion-icon name="logo-facebook" ></ion-icon>
+  </ion-chip>
+  <ion-chip color="primary" slot="start" >
+  <ion-icon name="logo-instagram" ></ion-icon>
+  </ion-chip>
+  </ion-item>
+  </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
