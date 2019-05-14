@@ -26,7 +26,7 @@ import { NewsPageModule } from './news/news.module';
     AppRoutingModule,
     NewsPageModule,
     AgmCoreModule.forRoot({
-  apiKey: 'AIzaSyAE82Y2RXh5bk0Ax0Kwny6d9IbvYZnF1EI'
+  apiKey: 'a'
 })
 
   ],
